@@ -1,0 +1,5 @@
+;;;Nome do Processo;Categoria do Processo;;;
+Input;;;;Output;;;
+flow;categoria;Quantidade;Unit;flow;categoria;quantidade;unit
+cascalho;Recurso do solo;1.06;Kg;Virgin Material;Circularidade;1.06;kg
+agua;Recurso de agua;0.01;M3;Energy for Main Materials Production;Circularidade;0.05;MJ

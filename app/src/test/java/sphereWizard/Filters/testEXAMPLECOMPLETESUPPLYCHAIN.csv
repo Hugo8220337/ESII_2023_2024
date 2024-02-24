@@ -1,0 +1,18 @@
+;;;Producao de patinhos de borracha ( Nome do Processo );Production ( categoria do processo );;;
+Input;;;;Output;;;
+flow;categoria;Quantidade;Unit;flow;categoria;quantidade;unit
+borracha amarela muito bonita;Recurso do solo;1000;KG;Virgin Material;Circularidade;1000;KG
+lenha para o fogão para derreter a borracha;Recurso do solo;200;KG;Virgin Material;Circularidade;200;KG
+eletricidade gasta pela fabrica;Energy for Main Materials Production;4;KwH;Energy for Main Materials Production;Circularidade;4;Kwh
+Agua para os patinhos nadarem;Recurso da agua;10;L;Virgin Material;Circularidade;10;L
+;;;Transporte dos patinhos ( Noma do Processo );Transporte ( categoria do processso );;;
+Input;;;;Output;;;
+flow;categoria;Quantidade;Unit;flow;categoria;quantidade;unit
+O quim vai na carrinha;Transportation;200;Km;Transportation;Transportation;200;Km
+;;;Venda no continente ( nome do processo );Retail (categoria do processo );;;
+Input;;;;Output;;;
+flow;categoria;Quantidade;Unit;flow;categoria;quantidade;unit
+Energia para manter o continente;Energy for Secondary Materials Production;2;KwH;Energy for Secondary Materials Production;Energy for Secondary Materials Production;2;KwH
+agua para os funcionarios;Recurso de agua;100;L;Virgin Material;Circularidade;100;L
+cinzas de patinhos de borracha usados para o terreno para a plantação de mais patinhos de borracha;Recycled Material;12;KG;Recycled Material;Recycled Material;12;KG
+cinzas de patinhos de borracha usados para o terreno para a plantação de mais patinhos de borracha;Recovered Recycled Material;15;KG;Recovered Recycled Material;Recovered Recycled Material;15;KG

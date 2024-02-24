@@ -1,0 +1,81 @@
+image: gradle:8.5.0-jdk17-alpine
+# image: gradle:7.5.0-jdk11-alpine
+
+# Custom runner: sphere-docker
+# Shared runner: docker-runner-estg
+stages:
+  - build
+  - test
+  - analyse
+
+variables:
+  GIT_SSL_NO_VERIFY: "true"
+
+before_script:
+  - echo "Start Automated Build"
+  # - cd ./sphere-wizard
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+  - chmod +x ./gradlew
+
+cache:
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+
+# define que a pipeline só vai executar quando for um merge
+.restrictions:
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: always
+
+build:
+  stage: build
+  script:
+    - ./gradlew clean
+    - ./gradlew assemble
+  artifacts:
+    paths:
+      - app/build/libs/*.jar
+    expire_in: 1 week
+  extends: .restrictions
+  tags:
+    - sphere-docker
+
+test_black_box:
+  stage: test
+  script:
+    - ./gradlew test
+  artifacts:
+    paths:
+      - app/build/test-results/test/TEST-*.xml
+  extends: .restrictions
+  tags:
+    - sphere-docker
+
+test_white_box:
+  stage: test
+  script:
+    - ./gradlew test jacocoTestReport # dá skip do jacocoTestReport se não tuver o test, mesmo com a dependência
+  dependencies:
+    - test_black_box
+  artifacts:
+    paths:
+      - app/build/reports/jacoco*
+  extends: .restrictions
+  tags:
+    - sphere-docker
+
+pmd:
+  stage: analyse
+  script:
+    - ./gradlew pmdMain
+    - ./gradlew pmdTest
+  artifacts:
+    paths:
+      - app/build/reports/pmd
+  extends: .restrictions
+  tags:
+    - sphere-docker
+
+after_script:
+  - echo "End Automated Build"

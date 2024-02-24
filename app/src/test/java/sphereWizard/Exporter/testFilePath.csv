@@ -1,0 +1,31 @@
+;;;Processes;;;
+;;;Producao de patinhos de borracha ( Nome do Processo );Production ( categoria do processo );;
+Input;;;;Output;;;
+flow;categoria;Quantidade;Unit;flow;categoria;quantidade;unit
+borracha amarela muito bonita;Recurso do solo;1000.0;KG;Virgin Material;Circularidade;1000.0;KG
+lenha para o fogão para derreter a borracha;Recurso do solo;200.0;KG;Virgin Material;Circularidade;200.0;KG
+eletricidade gasta pela fabrica;Energy for Main Materials Production;1.44E7;J;Energy for Main Materials Production;Circularidade;1.44E7;J
+Agua para os patinhos nadarem;Recurso da agua;0.01;M3;Virgin Material;Circularidade;0.01;M3
+;;;Transporte dos patinhos ( Noma do Processo );Transporte ( categoria do processso );;
+Input;;;;Output;;;
+flow;categoria;Quantidade;Unit;flow;categoria;quantidade;unit
+O quim vai na carrinha;Transportation;200000.0;M;Transportation;Transportation;200000.0;M
+;;;Venda no continente ( nome do processo );Retail (categoria do processo );;
+Input;;;;Output;;;
+flow;categoria;Quantidade;Unit;flow;categoria;quantidade;unit
+Energia para manter o continente;Energy for Secondary Materials Production;7200000.0;J;Energy for Secondary Materials Production;Energy for Secondary Materials Production;7200000.0;J
+agua para os funcionarios;Recurso de agua;0.1;M3;Virgin Material;Circularidade;0.1;M3
+cinzas de patinhos de borracha usados para o terreno para a plantação de mais patinhos de borracha;Recycled Material;12.0;KG;Recycled Material;Recycled Material;12.0;KG
+cinzas de patinhos de borracha usados para o terreno para a plantação de mais patinhos de borracha;Recovered Recycled Material;15.0;KG;Recovered Recycled Material;Recovered Recycled Material;15.0;KG
+
+;;;Product System Info;;;
+Product Life Time: ;100
+Product Utility: ;100
+Waste Eliminated: ;1185.11
+Recycled Input: ;27.0
+Mass: ;1227.11
+;;;Results;;;
+X: ;9.0
+Utility Factor: ;0.1
+Linear Flow Index: ;0.9602633576265607
+Circularity Index: ;0.9039736642373439
