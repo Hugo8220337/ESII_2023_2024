@@ -10,6 +10,7 @@
 
 
 # ESII_2023_2024
+Planeamento de um projeto de uma calculadora de índices de circularidade de produtos.
 
 ## Autores
 * Hugo Guimarães
